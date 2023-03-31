@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Comfortaa", cursive;
+  background-color: #DBE0FE;
+  color: white;
+}
+body h1 {
+  font-size: 20rem;
+}/*# sourceMappingURL=main.css.map */
