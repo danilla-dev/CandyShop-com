@@ -1,0 +1,271 @@
+.navbar {
+	position: sticky;
+	top: 0;
+	width: 100%;
+	height: 75px;
+	padding: 0;
+	z-index: 100;
+	background-color: $Pink;
+}
+.nav {
+	font-weight: bold;
+	z-index: 100;
+}
+.nav-btn {
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	border: none;
+	background-color: transparent;
+	padding: 0.5em;
+	cursor: pointer;
+	i {
+		font-size: 40px;
+	}
+}
+.nav-logo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	left: 5%;
+	top: 50%;
+	height: 100%;
+	transform: translate(0%, -50%);
+	font-size: 2.6rem;
+	font-weight: bold;
+	&__picture {
+		width: 30px;
+		height: 30px;
+	}
+	&__text {
+		margin-left: 0.5em;
+		text-align: center;
+	}
+}
+.nav-menu {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 0;
+	left: -100%;
+	height: 100vh;
+	width: 70%;
+	transition: left 0.3s;
+	background-color: $Pink;
+	font-size: 1.2rem;
+	z-index: 99999;
+	overflow: auto;
+	&--active {
+		left: 0;
+	}
+	a {
+		text-decoration: none;
+		color: black;
+	}
+	li {
+		list-style: none;
+	}
+	&__text {
+		display: inline-block;
+		position: absolute;
+		top: 75px;
+		width: 100%;
+		padding-bottom: 0.5em;
+		border-bottom: 2px solid black;
+		text-align: center;
+		transform: translateY(-100%);
+		font-size: 2.4rem;
+	}
+	&__btn {
+		position: absolute;
+		top: 5%;
+		right: 5%;
+		z-index: 9999;
+		background-color: transparent;
+		border: none;
+		i {
+			font-size: 3rem;
+		}
+	}
+	&__categories,
+	&__account {
+		padding: 2em 1em;
+		font-size: 2rem;
+		li {
+			margin: 1.5em 0;
+		}
+	}
+	&__categories {
+		padding-top: 75px;
+	}
+	&__category {
+		.dropdown {
+			padding: 0.5em;
+			display: none;
+			background-color: #f799bb;
+			&--active {
+				display: block;
+			}
+		}
+		.arrow {
+			position: absolute;
+			right: 5%;
+		}
+	}
+}
+
+@media (max-width: 320px) {
+	.nav-btn {
+		i {
+			font-size: 30px;
+		}
+	}
+}
+@media (min-width: 996px) {
+	.nav {
+		position: relative;
+	}
+	.nav-btn {
+		display: none;
+	}
+	.nav-logo {
+		left: 5%;
+	}
+	.nav-menu {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		top: 50%;
+		left: unset;
+		right: 0;
+		height: 75px;
+		transform: translate(0%, -50%);
+		overflow: unset;
+		&__text {
+			display: none;
+		}
+		&__btn {
+			display: none;
+		}
+		&__categories,
+		&__account {
+			display: flex;
+		}
+		&__categories {
+			width: 70%;
+			justify-content: space-around;
+			padding-top: 2em;
+			li {
+				margin: 0;
+			}
+		}
+		&__category {
+			position: relative;
+			line-height: 75px;
+			width: 25%;
+			transition: background-color 0.15s;
+			font-size: 1.6rem;
+			text-align: center;
+			cursor: pointer;
+			.dropdown {
+				position: absolute;
+				top: 75px;
+				min-width: 100%;
+				padding: 0;
+				background-color: #fff;
+				bottom: none;
+				li {
+					border-bottom: 0.2px solid black;
+					margin: auto 0;
+					padding: 0 0.5em;
+					text-align: left;
+					transition: background-color 0.3s;
+					&:hover {
+						background-color: #c2c0c0;
+					}
+				}
+			}
+			&:hover .dropdown {
+				display: block;
+				animation: dropdown-animation 0.15s;
+			}
+			&:hover {
+				background-color: #f895b9;
+			}
+			.arrow {
+				display: none;
+			}
+		}
+		&__account {
+			font-size: 1.6rem;
+			padding: 0;
+			height: 100%;
+			line-height: 75px;
+			li {
+				height: 100%;
+				padding: 0 1em;
+				margin: 0;
+				transition: background-color 0.15s;
+				cursor: pointer;
+				&:hover {
+					background-color: #f895b9;
+				}
+			}
+		}
+	}
+}
+.nav-search {
+	position: absolute;
+	left: 50%;
+	top: 75px;
+	width: 100%;
+	transform: translateX(-50%);
+	&__input {
+		position: absolute;
+		left: 50%;
+		height: 40px;
+		width: 90%;
+		transform: translateX(-50%);
+		padding: 1em;
+		margin-top: 0.5em;
+		border: 1px solid black;
+		outline: none;
+		&:focus {
+			box-shadow: 0 0 6px 1px #88888879;
+		}
+	}
+	&__btn {
+		position: absolute;
+		top: 0.5em;
+		left: 85%;
+		height: 40px;
+		width: 10%;
+		border: 1px solid black;
+		border-left: none;
+		background-color: white;
+		cursor: pointer;
+	}
+}
+
+//////////////////////////////////////////////
+@keyframes dropdown-animation {
+	from {
+		opacity: 0;
+		transform: scale(0.2);
+	}
+	40% {
+		opacity: 0.2;
+		transform: scale(0.4);
+	}
+	60% {
+		opacity: 0.6;
+		transform: scale(0.6);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
