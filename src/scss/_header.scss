@@ -1,3 +1,6 @@
+.header {
+	height: 500px;
+}
 .navbar {
 	position: sticky;
 	top: 0;
@@ -116,6 +119,97 @@
 	}
 }
 
+.nav-search {
+	position: absolute;
+	left: 50%;
+	top: 75px;
+	width: 100%;
+	transform: translateX(-50%);
+	opacity: 1;
+	&__input {
+		position: absolute;
+		left: 50%;
+		height: 40px;
+		width: 90%;
+		transform: translateX(-50%);
+		padding: 1em;
+		margin-top: 1em;
+		border: 1px solid black;
+		border-radius: 10px;
+		outline: none;
+		&:focus {
+			box-shadow: 0 0 6px 1px #88888879;
+		}
+	}
+	&__btn {
+		position: absolute;
+		top: 1em;
+		left: 85%;
+		height: 40px;
+		width: 10%;
+		border: 1px solid black;
+		border-left: none;
+		border-radius: 0 10px 10px 0;
+		background-color: white;
+		cursor: pointer;
+	}
+}
+
+.heading {
+	position: absolute;
+	top: 150px;
+	// background-color: aqua;
+	&__text {
+		font-size: 4rem;
+		text-align: center;
+		span {
+			color: $Purple;
+		}
+	}
+}
+
+.slider-container {
+	position: absolute;
+	top: 300px;
+	left: 50%;
+	width: 90%;
+	max-height: 150px;
+	transform: translateX(-50%);
+	margin-top: 0.5em;
+	border-radius: 10px;
+	box-shadow: 0 0 6px 1px gray;
+	overflow: hidden;
+}
+.slider {
+	display: flex;
+	transition: transform 0.3s ease-in-out;
+	&__picture {
+		width: 100%;
+		height: auto;
+	}
+	&__prev-btn,
+	&__next-btn {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		background-color: transparent;
+		border: none;
+		font-size: 2rem;
+		cursor: pointer;
+		padding: 10em 0;
+		i {
+			color: #fff;
+			opacity: 0.5;
+		}
+	}
+	&__prev-btn {
+		left: 10px;
+	}
+	&__next-btn {
+		right: 10px;
+	}
+}
+
 @media (max-width: 320px) {
 	.nav-btn {
 		i {
@@ -131,7 +225,8 @@
 		display: none;
 	}
 	.nav-logo {
-		left: 5%;
+		left: 0%;
+		margin-left: 1em;
 	}
 	.nav-menu {
 		display: flex;
@@ -217,38 +312,6 @@
 		}
 	}
 }
-.nav-search {
-	position: absolute;
-	left: 50%;
-	top: 75px;
-	width: 100%;
-	transform: translateX(-50%);
-	&__input {
-		position: absolute;
-		left: 50%;
-		height: 40px;
-		width: 90%;
-		transform: translateX(-50%);
-		padding: 1em;
-		margin-top: 0.5em;
-		border: 1px solid black;
-		outline: none;
-		&:focus {
-			box-shadow: 0 0 6px 1px #88888879;
-		}
-	}
-	&__btn {
-		position: absolute;
-		top: 0.5em;
-		left: 85%;
-		height: 40px;
-		width: 10%;
-		border: 1px solid black;
-		border-left: none;
-		background-color: white;
-		cursor: pointer;
-	}
-}
 
 //////////////////////////////////////////////
 @keyframes dropdown-animation {
@@ -269,3 +332,5 @@
 		transform: scale(1);
 	}
 }
+///////////////////////////////
+///

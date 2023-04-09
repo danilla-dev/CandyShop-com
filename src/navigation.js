@@ -60,3 +60,5 @@ document.addEventListener('DOMContentLoaded', () => {
 		categories.removeEventListener('click', showDropdown)
 	}
 })
+/////////////////////////////////////////////
+
