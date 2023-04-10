@@ -5,7 +5,6 @@ const blur = document.querySelector('.blur')
 const dropdowns = document.querySelectorAll('.dropdown')
 const categories = document.querySelector('.nav-menu__categories')
 const arrows = document.querySelectorAll('.arrow')
-const search = document.querySelector('.nav-search')
 
 // const checkWindowWidth = () => {
 // 	if (window.innerWidth > 996) {
@@ -19,14 +18,7 @@ const search = document.querySelector('.nav-search')
 // 	}
 // }
 
-const setSearchOpacity = () => {
-	if (window.scrollY > 20) {
-		search.style.opacity = '0.1'
-	} else {
-		search.style.opacity = '1.0'
-	}
-	search.addEventListener('click', () => (search.style.opacity = '1'))
-}
+
 
 const showDropdown = e => {
 	const category = e.target.closest('.nav-menu__category')
@@ -70,5 +62,3 @@ document.addEventListener('DOMContentLoaded', () => {
 		categories.removeEventListener('click', showDropdown)
 	}
 })
-/////////////////////////////////////////////
-window.addEventListener('scroll', setSearchOpacity)

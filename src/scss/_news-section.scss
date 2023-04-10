@@ -1,6 +1,6 @@
 .news {
 	position: absolute;
-	top: 550px;
+	top: 600px;
 	width: 100%;
 	height: 400px;
 	background-color: #ffc8dd;
@@ -69,11 +69,14 @@
 		}
 	}
 }
-@media (min-width: 768px) {
+
+@media (min-width: 576px) {
 	.news {
 		top: 750px;
 		height: 400px;
 	}
+}
+@media (min-width: 768px) {
 	.news-slider-container {
 		max-height: 250px;
 		.slider {
