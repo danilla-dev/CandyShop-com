@@ -183,9 +183,10 @@
 .slider {
 	display: flex;
 	transition: transform 0.3s ease-in-out;
+	max-height: 100%;
+	text-align: center;
 	&__picture {
 		width: 100%;
-		height: auto;
 	}
 	&__prev-btn,
 	&__next-btn {
@@ -216,7 +217,39 @@
 			font-size: 30px;
 		}
 	}
+	.heading {
+		&__text {
+			font-size: 3.4rem;
+		}
+	}
 }
+
+@media (min-width: 768px) {
+	.header {
+		height: 700px;
+	}
+	.heading {
+		top: 170px;
+		left: 50%;
+		transform: translateX(-50%);
+		&__text {
+			span {
+				font-size: 7rem;
+			}
+			font-size: 4.4rem;
+		}
+	}
+	.slider-container {
+		top: 380px;
+		max-height: 250px;
+	}
+	.slider {
+		&__picture {
+			min-width: 100%;
+		}
+	}
+}
+
 @media (min-width: 996px) {
 	.nav {
 		position: relative;

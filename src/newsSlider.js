@@ -6,7 +6,11 @@ let slideIndex = 0
 const slideCount = slider.children.length * 2 - 1
 
 const slide = () => {
-	slider.style.transform = `translateX(-${slideIndex * 50}%)`
+	if (window.innerWidth >= 768) {
+		slider.style.transform = `translateX(-${slideIndex * 30}%)`
+	} else {
+		slider.style.transform = `translateX(-${slideIndex * 50}%)`
+	}
 }
 
 const prevSlide = () => {
@@ -18,7 +22,9 @@ const prevSlide = () => {
 	slide()
 }
 const nextSlide = () => {
-	if (slideIndex < slideCount - 1) {
+	let num
+	window.innerWidth >= 768 ? (num = 2) : (num = 1)
+	if (slideIndex < slideCount - num) {
 		slideIndex++
 	} else {
 		slideIndex = 0

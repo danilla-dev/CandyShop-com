@@ -185,10 +185,11 @@
 .slider {
   display: flex;
   transition: transform 0.3s ease-in-out;
+  max-height: 100%;
+  text-align: center;
 }
 .slider__picture {
   width: 100%;
-  height: auto;
 }
 .slider__prev-btn, .slider__next-btn {
   position: absolute;
@@ -214,6 +215,32 @@
 @media (max-width: 320px) {
   .nav-btn i {
     font-size: 30px;
+  }
+  .heading__text {
+    font-size: 3.4rem;
+  }
+}
+@media (min-width: 768px) {
+  .header {
+    height: 700px;
+  }
+  .heading {
+    top: 170px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .heading__text {
+    font-size: 4.4rem;
+  }
+  .heading__text span {
+    font-size: 7rem;
+  }
+  .slider-container {
+    top: 380px;
+    max-height: 250px;
+  }
+  .slider__picture {
+    min-width: 100%;
   }
 }
 @media (min-width: 996px) {
@@ -332,7 +359,7 @@
   position: absolute;
   top: 500px;
   width: 100%;
-  height: 500px;
+  height: 400px;
   background-color: #ffc8dd;
 }
 .news__heading {
@@ -345,14 +372,14 @@
 
 .news-slider-container {
   position: absolute;
-  top: calc(100px + 1em);
+  top: calc(70px + 1em);
   left: 50%;
   width: 90%;
   max-height: 250px;
   transform: translateX(-50%);
   margin-top: 0.5em;
+  border: none;
   border-radius: 10px;
-  box-shadow: 0 0 6px 1px gray;
   overflow: hidden;
 }
 .news-slider-container .slider {
@@ -367,8 +394,8 @@
   height: 100%;
 }
 .news-slider-container .slider__picture {
-  width: 40%;
-  height: 40%;
+  width: 75%;
+  height: 55%;
   margin-top: 20px;
 }
 .news-slider-container .slider .product-info {
@@ -377,10 +404,6 @@
   align-items: center;
   justify-content: space-around;
   width: 50%;
-}
-.news-slider-container .slider .product-info__description {
-  width: 80%;
-  text-align: center;
 }
 .news-slider-container .slider .product-info__price {
   font-weight: bold;
@@ -391,6 +414,32 @@
   font-size: 1.8rem;
 }
 
+@media (max-width: 320px) {
+  .news-slider-container .slider .product-info__name {
+    font-size: 1.6rem;
+  }
+}
+@media (min-width: 768px) {
+  .news {
+    top: 700px;
+    height: 400px;
+  }
+  .news-slider-container {
+    max-height: 250px;
+  }
+  .news-slider-container .slider__slide {
+    min-width: 70%;
+  }
+  .news-slider-container .slider .product-info {
+    width: 30%;
+  }
+  .news-slider-container .slider .product-info__name {
+    font-size: 1.8rem;
+  }
+  .news-slider-container .slider .product-info__price {
+    font-size: 2rem;
+  }
+}
 * {
   margin: 0;
   padding: 0;
