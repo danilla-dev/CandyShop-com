@@ -1,5 +1,5 @@
 .header {
-	height: 500px;
+	height: 550px;
 }
 .navbar {
 	position: sticky;
@@ -30,7 +30,7 @@
 .nav-logo {
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: flex-start;
 	position: absolute;
 	left: 5%;
 	top: 50%;
@@ -39,8 +39,8 @@
 	font-size: 2.6rem;
 	font-weight: bold;
 	&__picture {
-		width: 30px;
-		height: 30px;
+		width: 230px;
+		height: 70%;
 	}
 	&__text {
 		margin-left: 0.5em;
@@ -57,9 +57,9 @@
 	width: 70%;
 	transition: left 0.3s;
 	background-color: $Pink;
-	font-size: 1.2rem;
 	z-index: 99999;
 	overflow: auto;
+	font-size: 1.2rem;
 	&--active {
 		left: 0;
 	}
@@ -79,7 +79,6 @@
 		border-bottom: 2px solid black;
 		text-align: center;
 		transform: translateY(-100%);
-		font-size: 2.4rem;
 	}
 	&__btn {
 		position: absolute;
@@ -173,7 +172,7 @@
 	top: 300px;
 	left: 50%;
 	width: 90%;
-	max-height: 150px;
+	max-height: 200px;
 	transform: translateX(-50%);
 	margin-top: 0.5em;
 	border-radius: 10px;
@@ -186,7 +185,7 @@
 	max-height: 100%;
 	text-align: center;
 	&__picture {
-		width: 100%;
+		min-width: 100%;
 	}
 	&__prev-btn,
 	&__next-btn {
@@ -228,6 +227,9 @@
 	.header {
 		height: 700px;
 	}
+	.navbar {
+		height: 90px;
+	}
 	.heading {
 		top: 170px;
 		left: 50%;
@@ -239,14 +241,28 @@
 			font-size: 4.4rem;
 		}
 	}
+	.nav-search {
+		top: 90px;
+	}
+	.nav-logo {
+		&__picture {
+			width: 400px;
+			height: 80%;
+		}
+	}
+	.nav-menu {
+		font-size: 4rem;
+		&__text {
+			top: 90px;
+		}
+		&__categories,
+		&__account {
+			font-size: 3.2rem;
+		}
+	}
 	.slider-container {
 		top: 380px;
-		max-height: 250px;
-	}
-	.slider {
-		&__picture {
-			min-width: 100%;
-		}
+		max-height: 300px;
 	}
 }
 
