@@ -3,7 +3,7 @@ const slider = sliderContainer.querySelector('.slider')
 const prevBtn = sliderContainer.querySelector('.slider__prev-btn')
 const nextBtn = sliderContainer.querySelector('.slider__next-btn')
 let slideIndex = 0
-const slideCount = slider.children.length * 2 - 1
+const slideCount = slider.children.length  - 1
 
 const slide = () => {
 	if (window.innerWidth >= 768) {
